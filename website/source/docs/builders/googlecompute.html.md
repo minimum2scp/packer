@@ -86,7 +86,7 @@ the path to the file containing the JSON.
   "type": "googlecompute",
   "account_file": "account.json",
   "project_id": "my-project",
-  "source_image": "debian-7-wheezy-v20150127",
+  "source_image": "debian-8-jessie-v20160511",
   "zone": "us-central1-a"
 }
 ```
@@ -106,8 +106,8 @@ builder.
 -   `project_id` (string) - The project ID that will be used to launch instances
     and store images.
 
--   `source_image` (string) - The source image to use to create the new
-    image from. Example: `"debian-7-wheezy-v20150127"`
+-   `source_image` (string) - The source image name (or family) to use to create the new
+    image from. Example: `"debian-8-jessie-v20160511"`, `"debian-8"`
 
 -   `zone` (string) - The zone in which to launch the instance used to create
     the image. Example: `"us-central1-a"`

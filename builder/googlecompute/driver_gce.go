@@ -334,6 +334,14 @@ func (d *driverGCE) getImage(img Image) (image *compute.Image, err error) {
 		image = nil
 	}
 
+	for _, project := range projects {
+		image, err = d.service.Images.GetFromFamily(project, img.Name).Do()
+		if err == nil && image != nil && image.SelfLink != "" {
+			return
+		}
+		image = nil
+	}
+
 	err = fmt.Errorf("Image %s could not be found in any of these projects: %s", img.Name, projects)
 	return
 }
